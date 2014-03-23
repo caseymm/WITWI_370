@@ -5,7 +5,7 @@
 {% block content %}
 <div class="row">
   <div class="col-xs-12">
-    <h3>{{school.name}}</h3>
+    <h3>{{ school.name }}</h3>
     <hr>
     <!--Created: {{school.creation_date}}
     <br>
@@ -14,5 +14,45 @@
     <p>{{school.content_split | safe}}</p>
   </div>
 </div>
+<div class="row">
+    <div class="col-xs-8">
+    <div class="style-box">
+        <div class="schoolh3">Profile</div>
+        <ul>
+            <li>Location: {{ school.city }}, {{ school.state }}</li>
+            <li>Population: {{ school.population }}</li>
+            <li>Male-Female Population: {{ school.male_ratio }} percent male, {{ school.female_ratio }} percent female</li>
+            <li>Public or Private: {{ school.priv_pub }}</li>
+            <li>Women in Greek Life: {{ school.female_greeklife }} percent of female students in Greek life</li>
+            <li>Men in Greek Life: {{ school.male_greeklife }} percent of male students in Greek life</li>
+        </ul>
+    </div>
+    </div>
+    <div class="col-xs-4">
+    <div class="style-box">
+    <div class="schoolh3">Resources</div>
+    <ul>
+        <li><a href="{{ school.campus_health }}" target="blank">Campus Health</a></li>
+        <li><a href="{{ school.sexual_health }}" target="blank">Sexual Health</a></li>
+        <li><a href="{{ school.counseling }}" target="blank">Counseling</a></li>
+    </ul>
+    </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-8">
+    <div class="style-box">
+        <div class="schoolh3">Survivor Stories</div>
+    </div>
+    </div>
+    <div class="col-xs-4">
+    <div class="style-box">
+        <div class="schoolh3">Newsfeed</h3>
+        {{ school.content }}
+    </div>
+    </div>
+</div>
+
+
 
 {% endblock %}
